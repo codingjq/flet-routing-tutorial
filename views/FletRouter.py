@@ -1,9 +1,6 @@
 
 import flet as ft # dev purposes only
 
-# Nav Bar to give to views
-from user_controls.app_bar import NavBar
-
 # views
 from views.index_view import IndexView
 from views.profile_view import ProfileView
