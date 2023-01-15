@@ -5,6 +5,8 @@ from user_controls.app_bar import NavBar
 
 def main(page: ft.Page):
 
+    page.theme_mode = "dark"
+
     page.appbar = NavBar(page, ft)
     myRouter = Router(page, ft)
 
@@ -13,7 +15,8 @@ def main(page: ft.Page):
     page.add(
         myRouter.body
     )
-    page.update()
+
+    page.go('/')
 
 
-ft.app(target=main)
+ft.app(target=main, assets_dir="assets")

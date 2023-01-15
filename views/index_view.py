@@ -1,6 +1,28 @@
 
 import flet as ft
 
-def IndexView(ft=ft):
-    return ft.Text("This is the Home")
+def IndexView(page, ft=ft):
+    
+    content = ft.Column(
+               
+            [
+                ft.Row(
+                [
+                    ft.Text(
+                        "Welcome to my Flet Router Tutorial",
+                        size=50)
+                ], 
+                alignment=ft.MainAxisAlignment.CENTER
+            )
+            ]
+    
+    )
+    
+    
+    
+    
+    
+    
+    
+    return content
 
