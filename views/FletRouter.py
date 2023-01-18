@@ -10,7 +10,7 @@ from views.settings_view import SettingsView
 
 class Router:
 
-    def __init__(self, page, ft):
+    def __init__(self, page):
         self.page = page
         self.ft = ft
         self.routes = {
