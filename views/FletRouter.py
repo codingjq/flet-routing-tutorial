@@ -1,5 +1,5 @@
 
-import flet as ft # dev purposes only
+import flet as ft
 
 # views
 from views.index_view import IndexView

@@ -7,8 +7,8 @@ def main(page: ft.Page):
 
     page.theme_mode = "dark"
 
-    page.appbar = NavBar(page, ft)
-    myRouter = Router(page, ft)
+    page.appbar = NavBar(page)
+    myRouter = Router(page)
 
     page.on_route_change = myRouter.route_change
 

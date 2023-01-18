@@ -1,7 +1,7 @@
 
 import flet as ft
 
-def IndexView(page, ft=ft):
+def IndexView(page):
     
     content = ft.Column(
                

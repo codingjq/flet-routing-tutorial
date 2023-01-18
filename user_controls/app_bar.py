@@ -1,7 +1,7 @@
 import flet as ft
 
 
-def NavBar(page, ft=ft):
+def NavBar(page):
 
 
 

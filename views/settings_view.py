@@ -1,7 +1,7 @@
 
 import flet as ft
 
-def SettingsView(page, ft=ft):
+def SettingsView(page):
 
     def toggle_dark_mode(e):
         if page.theme_mode == "dark":
