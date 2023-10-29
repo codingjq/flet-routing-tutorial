@@ -1,7 +1,7 @@
 
 import flet as ft
 
-def ProfileView(*args):
+def ProfileView(router):
     
     content = ft.Column(
                

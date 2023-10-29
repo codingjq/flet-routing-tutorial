@@ -3,16 +3,16 @@ import flet as ft
 from views.Router import Router, DataStrategyEnum
 from State import global_state
 
-def DataView(router_data: Union[Router, str, None] = None):
+def DataView(router: Union[Router, str, None] = None):
     text = ft.Text("")
     
-    if router_data and router_data.data_strategy == DataStrategyEnum.QUERY:
-        text = ft.Text("Query Data: " + router_data.get_query("data"))
-    elif router_data and router_data.data_strategy == DataStrategyEnum.ROUTER_DATA:
-        text = ft.Text("Router Data: " + router_data.data.get("data"))
-    elif router_data and router_data.data_strategy == DataStrategyEnum.CLIENT_STORAGE:
-        text = ft.Text("Client Storage: " + router_data.page.client_storage.get("data"))
-    elif router_data and router_data.data_strategy == DataStrategyEnum.STATE:
+    if router and router.data_strategy == DataStrategyEnum.QUERY:
+        text = ft.Text("Query Data: " + router.get_query("data"))
+    elif router and router.data_strategy == DataStrategyEnum.ROUTER_DATA:
+        text = ft.Text("Router Data: " + router.get_data("data"))
+    elif router and router.data_strategy == DataStrategyEnum.CLIENT_STORAGE:
+        text = ft.Text("Client Storage: " + router.page.client_storage.get("data"))
+    elif router and router.data_strategy == DataStrategyEnum.STATE:
         text = ft.Text("State: " + global_state.get_state_by_key("data").get_state())
     content = ft.Column(
             [

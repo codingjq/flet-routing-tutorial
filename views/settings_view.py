@@ -1,7 +1,7 @@
 
 import flet as ft
 
-def SettingsView(*args):
+def SettingsView(router):
 
     def toggle_dark_mode(e):
         page = e.page

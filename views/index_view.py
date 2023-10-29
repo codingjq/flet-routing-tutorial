@@ -11,7 +11,7 @@ def IndexView(router_data: Union[Router, str, None] = None):
         if router_data and router_data.data_strategy == DataStrategyEnum.QUERY:
             e.page.go("/data", data=text_field.value)
         elif router_data and router_data.data_strategy == DataStrategyEnum.ROUTER_DATA: 
-            router_data.data["data"] = "router_data: " + text_field.value
+            router_data.set_data("data", text_field.value)
             e.page.go("/data", data=text_field.value)
         elif router_data and router_data.data_strategy == DataStrategyEnum.CLIENT_STORAGE:
             e.page.client_storage.set("data", text_field.value)

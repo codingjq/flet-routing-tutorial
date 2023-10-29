@@ -9,7 +9,7 @@ class DataStrategyEnum(Enum):
     STATE = 3
 
 class Router:
-    def __init__(self, data_strategy=DataStrategyEnum.STATE):
+    def __init__(self, data_strategy=DataStrategyEnum.QUERY):
         self.data_strategy = data_strategy
         self.data = dict()
         self.routes = {}
@@ -33,6 +33,12 @@ class Router:
 
         self.body.content = self.routes[_page](self)
         self.body.update()
+
+    def set_data(self, key, value):
+        self.data[key] = value
+
+    def get_data(self, key):
+        return self.data.get(key)
 
     def get_query(self, key):
         return self.data.get(key)
