@@ -1,9 +1,10 @@
 
 import flet as ft
 
-def SettingsView(page):
+def SettingsView(*args):
 
     def toggle_dark_mode(e):
+        page = e.page
         if page.theme_mode == "dark":
             page.theme_mode = "light"
             page.update()
@@ -12,6 +13,7 @@ def SettingsView(page):
             page.update()
 
     def exit_app(e):
+        page = e.page
         page.window_destroy()
     
     content = ft.Column(
