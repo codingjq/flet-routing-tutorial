@@ -9,13 +9,13 @@ class DataStrategyEnum(Enum):
     STATE = 3
 
 class Router:
-    def __init__(self, data_strategy=DataStrategyEnum.QUERY):
+    def __init__(self, data_strategy=DataStrategyEnum.STATE):
         self.data_strategy = data_strategy
         self.data = dict()
         self.routes = {}
         self.body = ft.Container()
 
-    def set_route(self, stub: str, view: Callable[[ft.Page, Any], ft.Control]):
+    def set_route(self, stub: str, view: Callable):
         self.routes[stub] = view
     
     def set_routes(self, route_dictionary: dict):
@@ -29,7 +29,7 @@ class Router:
         for item in queries:
             key = item.split("=")[0]
             value = item.split("=")[1]
-            self.data[key] = value
+            self.data[key] = value.replace('+', ' ')
 
         self.body.content = self.routes[_page](self)
         self.body.update()

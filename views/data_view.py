@@ -11,10 +11,9 @@ def DataView(router_data: Union[Router, str, None] = None):
     elif router_data and router_data.data_strategy == DataStrategyEnum.ROUTER_DATA:
         text = ft.Text("Router Data: " + router_data.data.get("data"))
     elif router_data and router_data.data_strategy == DataStrategyEnum.CLIENT_STORAGE:
-        text = ft.Text("Client Storage: " + ft.Page().client_storage.get("data"))
+        text = ft.Text("Client Storage: " + router_data.page.client_storage.get("data"))
     elif router_data and router_data.data_strategy == DataStrategyEnum.STATE:
         text = ft.Text("State: " + global_state.get_state_by_key("data").get_state())
-        
     content = ft.Column(
             [
                 ft.Row(

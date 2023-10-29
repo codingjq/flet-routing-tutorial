@@ -7,6 +7,7 @@ def main(page: ft.Page):
     page.theme_mode = "dark"
     page.appbar = NavBar(page)
     page.on_route_change = router.route_change
+    router.page = page
     page.add(
         router.body
     )

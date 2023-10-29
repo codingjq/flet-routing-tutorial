@@ -14,14 +14,14 @@ def IndexView(router_data: Union[Router, str, None] = None):
             router_data.data["data"] = "router_data: " + text_field.value
             e.page.go("/data", data=text_field.value)
         elif router_data and router_data.data_strategy == DataStrategyEnum.CLIENT_STORAGE:
-            e.page.client_storage.set("data", "client_storage :" + text_field.value)
+            e.page.client_storage.set("data", text_field.value)
             e.page.go("/data")
         elif router_data and router_data.data_strategy == DataStrategyEnum.STATE:
             state = State("data", text_field.value)
             e.page.go("/data")
         else:
             e.page.go("/data")
-            
+
     text_field = ft.TextField()
     send_button = ft.ElevatedButton("Send")
     send_button.on_click = send_data
