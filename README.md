@@ -4,7 +4,7 @@ A video on how I use Flet's routing system
 
 ## Main Branch
 
-This shows the current example which is up to date with the tutorial explaining how to persist data accross views [coming soon](https://youtube.com/@codingjq)
+This shows the current example which is up to date with the tutorial explaining how to persist data accross views [Persisting Data Tutorial]([https://youtube.com/@codingjq](https://youtu.be/7AuRgCSOAZM))
 
 ## Video1 Branch
 
